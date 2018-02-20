@@ -234,14 +234,35 @@ input,
 select,
 textarea {
   color: #404040;
-  font-family: sans-serif;
+  font-family: "Merriweather Web", serif;
   font-size: 16px;
   font-size: 1rem;
-  line-height: 1.5; }
+  line-height: 1.75; }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  clear: both; }
+  clear: both;
+  font-family: "Novecento Sans Web", sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase; }
+
+h1 {
+  font-size: 38.4px;
+  font-size: 2.4rem;
+  line-height: 1.25;
+  margin-bottom: 0.5rem; }
+
+h2 {
+  color: #2f1339;
+  font-size: 33.6px;
+  font-size: 2.1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.25; }
+
+h3 {
+  font-size: 28.8px;
+  font-size: 1.8rem;
+  line-height: 1.25; }
 
 /* Copy */
 p {
@@ -262,10 +283,10 @@ pre {
   font-size: 15px;
   font-size: 0.9375rem;
   line-height: 1.6;
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.6em;
   max-width: 100%;
   overflow: auto;
-  padding: 1.6rem; }
+  padding: 1.6em; }
 
 code, kbd, tt, var {
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
@@ -416,11 +437,11 @@ textarea {
 --------------------------------------------------------------*/
 /* Links */
 a {
-  color: royalblue; }
-  a:visited {
-    color: purple; }
+  color: #248A83;
+  text-decoration: none; }
   a:hover, a:focus, a:active {
-    color: midnightblue; }
+    color: #2f1339;
+    text-decoration: none; }
   a:focus {
     outline: thin dotted; }
   a:hover, a:active {
@@ -428,12 +449,10 @@ a {
 
 /* Menus */
 .main-navigation {
-  clear: both;
-  display: block;
-  float: left;
-  width: 100%; }
+  font-family: "Novecento Sans Web", sans-serif;
+  text-transform: uppercase; }
   .main-navigation ul {
-    display: none;
+    display: block;
     list-style: none;
     margin: 0;
     padding-left: 0; }
@@ -443,10 +462,10 @@ a {
       float: left;
       position: absolute;
       top: 1.5rem;
-      left: -999rem;
+      left: -999em;
       z-index: 99999; }
       .main-navigation ul ul ul {
-        left: -999rem;
+        left: -999em;
         top: 0; }
       .main-navigation ul ul li:hover > ul,
       .main-navigation ul ul li.focus > ul {
@@ -458,22 +477,13 @@ a {
       left: auto; }
   .main-navigation li {
     float: left;
+    padding-left: 1.5rem;
     position: relative; }
   .main-navigation a {
     display: block;
     text-decoration: none; }
 
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-  display: block; }
-
-@media screen and (min-width: 768px) {
-  .menu-toggle {
-    display: none; }
-  .main-navigation ul {
-    display: block; } }
-
+/* Page Links and Pagination */
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
 .post-navigation {
@@ -492,6 +502,24 @@ a {
   float: right;
   text-align: right;
   width: 50%; }
+
+.numbered-pagination {
+  border-top: 1px solid #e1e1e1;
+  font-family: "Novecento Sans Web", sans-serif;
+  padding: 1.5rem 0;
+  text-transform: uppercase; }
+  .numbered-pagination .page-numbers {
+    background-color: #248A83;
+    color: white;
+    display: inline-block;
+    line-height: 1;
+    padding: 0.5rem 0.75rem;
+    margin-right: 0.25rem;
+    text-align: center; }
+    .numbered-pagination .page-numbers:hover {
+      background-color: #2f1339; }
+    .numbered-pagination .page-numbers.current {
+      background-color: #808080; }
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -601,6 +629,62 @@ a {
 
 .bypostauthor {
   display: block; }
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.site-footer {
+  background: url("../../images/dark-wood.png");
+  background-size: 512px 512px;
+  color: white; }
+  .site-footer a {
+    color: white;
+    text-decoration: none; }
+    .site-footer a:hover {
+      text-decoration: underline; }
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min-device-pixel-ratio: 1.3), only screen and (-webkit-min-device-pixel-ratio: 1.25), only screen and (min-resolution: 120dpi) {
+  .site-footer {
+    background: url("../../images/dark-wood@2x.png");
+    background-size: 512px 512px; } }
+
+.footer-blocks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .footer-blocks h3 {
+    color: #d99054;
+    font-size: 19.2px;
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase; }
+  .footer-blocks p {
+    margin-bottom: 0.5rem; }
+  .footer-blocks i {
+    font-size: 20px;
+    font-size: 1.25rem;
+    margin-right: 0.5rem; }
+  .footer-blocks .day-of-week {
+    font-weight: bold; }
+
+.footer-block-item {
+  margin: 3rem 0;
+  padding-right: 1.5rem;
+  width: 25%; }
+  .footer-block-item:last-child {
+    padding-right: 0;
+    width: 50%; }
+  .footer-block-item .text-logo {
+    margin-top: 1rem;
+    text-align: right; }
+    .footer-block-item .text-logo img {
+      max-width: 50%; }
+
+.site-info {
+  font-family: "Novecento Sans Web", sans-serif;
+  padding: 1.5rem 0;
+  text-align: center;
+  text-transform: uppercase; }
 
 /*--------------------------------------------------------------
 # Media

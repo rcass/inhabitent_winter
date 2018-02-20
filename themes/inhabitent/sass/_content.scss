@@ -47,3 +47,82 @@
 .bypostauthor {
 	display: block;
 }
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+.site-footer {
+	background: url('../../images/dark-wood.png');
+	background-size: 512px 512px;
+	color: white;
+
+	a {
+		 color: white;
+		 text-decoration: none;
+
+		 &:hover {
+				text-decoration: underline;
+		 }
+	}
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.3),
+only screen and (min-device-pixel-ratio: 1.3),
+only screen and (min-resolution: 120dpi) {
+	.site-footer {
+		 background: url('../../images/dark-wood@2x.png');
+		 background-size: 512px 512px;
+	}
+}
+
+.footer-blocks {
+	display: flex;
+
+	h3 {
+		 color: $color__brand-orange;
+		 @include font-size(1.2);
+		 margin-bottom: $base__space-unit / 2;
+		 text-transform: uppercase;
+	}
+
+	p {
+		 margin-bottom: $base__space-unit / 3;
+	}
+
+	i {
+		 @include font-size(1.25);
+		 margin-right: $base__space-unit / 3;
+	}
+
+	.day-of-week {
+		 font-weight: bold;
+	}
+}
+
+.footer-block-item {
+	margin: ($base__space-unit * 2) 0;
+	padding-right: $base__space-unit;
+	width: 25%;
+
+	&:last-child {
+		 padding-right: 0;
+		 width: 50%;
+	}
+
+	.text-logo {
+		 margin-top: 1rem;
+		 text-align: right;
+
+		 img {
+				max-width: 50%;
+		 }
+	}
+}
+
+.site-info {
+	font-family: $font__alt;
+	padding: $base__space-unit 0;
+	text-align: center;
+	text-transform: uppercase;
+}

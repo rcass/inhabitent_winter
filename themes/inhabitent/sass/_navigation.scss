@@ -6,18 +6,19 @@
 
 a {
 	color: $color__link;
+	text-decoration: none;
 
-	&:visited {
-		color: $color__link-visited;
-	}
 	&:hover,
 	&:focus,
 	&:active {
 		color: $color__link-hover;
+		text-decoration: none;
 	}
+
 	&:focus {
 		outline: thin dotted;
 	}
+
 	&:hover,
 	&:active {
 		outline: 0;
@@ -27,13 +28,11 @@ a {
 /* Menus */
 
 .main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
+	font-family: $font__alt;
+	text-transform: uppercase;
 
 	ul {
-		display: none;
+		display: block;
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
@@ -43,11 +42,11 @@ a {
 			float: left;
 			position: absolute;
 			top: $base__space-unit;
-			left: -999rem;
+			left: -999em;
 			z-index: 99999;
 
 			ul {
-				left: -999rem;
+				left: -999em;
 				top: 0;
 			}
 
@@ -76,14 +75,17 @@ a {
 			left: auto;
 		}
 	}
+
 	li {
 		float: left;
+		padding-left: $base__space-unit;
 		position: relative;
 
 		&:hover > a,
 		&.focus > a {
 		}
 	}
+
 	a {
 		display: block;
 		text-decoration: none;
@@ -95,20 +97,7 @@ a {
 	}
 }
 
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
-
-@media screen and (min-width: 768px) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
-		display: block;
-	}
-}
+/* Page Links and Pagination */
 
 .comment-navigation,
 .posts-navigation,
@@ -129,4 +118,29 @@ a {
 		text-align: right;
 		width: 50%;
 	}
+}
+
+.numbered-pagination {
+   border-top: $base__border;
+	font-family: $font__alt;
+   padding: $base__space-unit 0;
+	text-transform: uppercase;
+
+   .page-numbers {
+		background-color: $color__link;
+		color: white;
+		display: inline-block;
+		line-height: 1;
+		padding: ($base__space-unit / 3) ($base__space-unit / 2);
+      margin-right: $base__space-unit / 6;
+		text-align: center;
+
+		&:hover {
+			background-color: $color__link_hover;
+		}
+
+		&.current {
+			background-color: $color__brand-med-grey;
+		}
+   }
 }
